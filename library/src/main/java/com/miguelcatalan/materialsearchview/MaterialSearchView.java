@@ -266,8 +266,7 @@ public class MaterialSearchView extends FrameLayout implements Filter.FilterList
         CharSequence query = mSearchSrcTextView.getText();
         if (query != null && TextUtils.getTrimmedLength(query) > 0) {
             if (mOnQueryChangeListener == null || !mOnQueryChangeListener.onQueryTextSubmit(query.toString())) {
-                closeSearch();
-                mSearchSrcTextView.setText(null);
+                clearFocus();
             }
         }
     }
